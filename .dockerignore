@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+*.o
+*.a
+# Git
+.git/
+.gitignore
+# IDE
+.vscode/
+.idea/
+# OS
+.DS_Store
+# Large files
+data/
+*.bin

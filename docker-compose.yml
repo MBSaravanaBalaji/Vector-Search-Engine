@@ -1,0 +1,26 @@
+# Version of docker-compose syntax
+version: '3.8'
+# Define services (containers)
+services:
+  # Name of your service
+  vector-search:
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: vector-search-engine
+    
+    ports:
+      - "8080:8080"
+      - "9090:9090"  # Metrics port
+    
+
+    volumes:
+      - ./:/app
+      - ./data:/app/data  # Persistent data
+    
+    environment:
+      - LOG_LEVEL=info
+      - MAX_VECTORS=100000
+    
