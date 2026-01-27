@@ -4,12 +4,15 @@ cmake_minimum_required(VERSION 3.14)
 # Project name and version
 project(VectorSearchEngine VERSION 1.0)
 
-# Use C++17 standard (modern C++ with good performance features)
-set(CMAKE_CXX_STANDARD 17)
+# Use C++23 standard (latest C++ with all modern features)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)  # Disable compiler-specific extensions
 
 # Enable compiler optimizations for release builds
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
+# Debug builds with sanitizers (helps catch bugs)
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall -Wextra -pedantic")
 
 # Find Boost libraries (we installed libboost-all-dev in Docker)
 find_package(Boost REQUIRED)
@@ -37,6 +40,19 @@ target_link_libraries(vector-search-engine ${Boost_LIBRARIES} pthread)
 
 # Installation rules (where to put the binary)
 install(TARGETS vector-search-engine DESTINATION bin)
+
+# ============================================
+# Test Executable Configuration
+# ============================================
+
+# Build test executable for distance layer
+add_executable(test_distance 
+    tests/test_distance.cpp
+    src/distance/distance.cpp
+)
+
+# Link required libraries for tests
+target_link_libraries(test_distance pthread)
 
 # Print some helpful info during build
 message(STATUS "===========================================")

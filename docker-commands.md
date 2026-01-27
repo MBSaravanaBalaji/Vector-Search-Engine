@@ -29,3 +29,10 @@ docker system prune -a
 3. Run: `docker build -t vector-search .` (takes ~5-7 min first time)
 4. Run: `docker-compose up -d`
 5. Exit container: Press `Ctrl+C`
+
+
+## process to test in docker container
+1. docker-compose run --rm vector-search bash
+2. cd build
+3. cmake ..
+4. make what ur testing ex.{test_distance}

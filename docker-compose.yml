@@ -1,5 +1,3 @@
-# Version of docker-compose syntax
-version: '3.8'
 # Define services (containers)
 services:
   # Name of your service
@@ -8,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: builder  # Use builder stage with CMake installed
 
     container_name: vector-search-engine
     
