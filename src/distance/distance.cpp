@@ -1,4 +1,4 @@
-#include "distance/distance.h"
+#include "distance/distance.hpp"
 #include <cmath>
 #include <stdexcept>
 
