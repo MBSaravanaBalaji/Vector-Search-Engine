@@ -54,6 +54,16 @@ add_executable(test_distance
 # Link required libraries for tests
 target_link_libraries(test_distance pthread)
 
+# Build test executable for vector store layer
+add_executable(test_vector_store 
+    tests/test_vector_store.cpp
+    src/store/vector_store.cpp
+    src/distance/distance.cpp
+)
+
+# Link required libraries for vector store tests
+target_link_libraries(test_vector_store pthread)
+
 # Print some helpful info during build
 message(STATUS "===========================================")
 message(STATUS "Vector Search Engine Build Configuration")

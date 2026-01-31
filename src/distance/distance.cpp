@@ -1,4 +1,4 @@
-#include "distance/distance.hpp"
+#include "../distance/distance.hpp"
 #include <cmath>
 #include <stdexcept>
 
@@ -11,7 +11,7 @@ float dotProduct(const std::vector<float>& a, const std::vector<float>& b){
         throw std::invalid_argument("vectors must be same size");
     }
     
-    float res = 0.0f;
+    float res = 0.0f; 
     // iterates through indices for dot product
     for (size_t i = 0; i < a.size(); i++){
         res += a[i] * b[i];

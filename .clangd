@@ -1,0 +1,4 @@
+CompileFlags:
+  Add:
+    - -std=c++23
+    - -I/Users/ashwinajai/Vector Search Engine/Vector-Search-Engine/src
