@@ -1,8 +1,9 @@
 #include "distance/distance.hpp"
-#include "store/vector_store.h"
+#include "common/vector_store.h"
 #include <cassert>
 #include <cmath>
 #include <iostream>
+#include "common/types.hpp"
 
 using namespace atlas;
 

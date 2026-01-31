@@ -35,4 +35,4 @@ docker system prune -a
 1. docker-compose run --rm vector-search bash
 2. cd build
 3. cmake ..
-4. make what ur testing ex.{test_distance}
+4. make .. ex.{test_distance}

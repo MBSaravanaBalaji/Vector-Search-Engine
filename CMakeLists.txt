@@ -57,7 +57,7 @@ target_link_libraries(test_distance pthread)
 # Build test executable for vector store layer
 add_executable(test_vector_store 
     tests/test_vector_store.cpp
-    src/store/vector_store.cpp
+    src/common/vector_store.cpp
     src/distance/distance.cpp
 )
 

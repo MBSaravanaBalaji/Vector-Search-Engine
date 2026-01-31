@@ -17,6 +17,9 @@ namespace atlas{
         VectorId id;
         Distance distance;
 
+        // Default constructor
+        VectorWithDistance() : id(0), distance(0.0f) {}
+
         //Constructor
         VectorWithDistance(VectorId id, Distance dist) : id(id), distance(dist){}
 

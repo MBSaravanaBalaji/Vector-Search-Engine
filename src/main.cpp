@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
     std::cout << std::endl;
     
     std::cout << "Next steps:" << std::endl;
-    std::cout << "1. Implement vector store (src/store/vector_store.cpp)" << std::endl;
+    std::cout << "1. Implement vector store (src/common/vector_store.cpp)" << std::endl;
     std::cout << "2. Implement HNSW index (src/index/hnsw.cpp)" << std::endl;
     std::cout << "3. Add HTTP server (src/server/http_server.cpp)" << std::endl;
     std::cout << "4. Add SIMD optimizations (src/simd/dot_avx2.cpp)" << std::endl;
