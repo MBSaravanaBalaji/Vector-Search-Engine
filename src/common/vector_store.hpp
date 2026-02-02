@@ -1,5 +1,4 @@
-#ifndef VECTOR_STORE_H
-#define VECTOR_STORE_H
+#pragma once
 
 #include "../common/types.hpp"
 #include <stdexcept>
@@ -72,5 +71,3 @@ public:
 };
 
 } // namespace atlas
-
-#endif // VECTOR_STORE_H

@@ -1,4 +1,4 @@
-#include "vector_store.h"
+#include "vector_store.hpp"
 #include "../distance/distance.hpp"
 #include <algorithm>
 #include <stdexcept>

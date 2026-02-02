@@ -21,9 +21,13 @@ find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
-# Collect all source files from src/ directory
+# Collect all source files from src/ directory (excluding tests)
 file(GLOB_RECURSE SOURCES 
-    "src/*.cpp"
+    "src/common/*.cpp"
+    "src/distance/*.cpp"
+    "src/index/*.cpp"
+    "src/metrics/*.cpp"
+    "src/main.cpp"
 )
 
 # If no source files exist yet, create a placeholder main
@@ -63,6 +67,17 @@ add_executable(test_vector_store
 
 # Link required libraries for vector store tests
 target_link_libraries(test_vector_store pthread)
+
+# Build test executable for HNSW index
+add_executable(test_hnsw
+    tests/test_hnsw.cpp
+    src/index/hnsw.cpp
+    src/common/vector_store.cpp
+    src/distance/distance.cpp
+)
+
+# Link required libraries for HNSW tests
+target_link_libraries(test_hnsw pthread)
 
 # Print some helpful info during build
 message(STATUS "===========================================")
