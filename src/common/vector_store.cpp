@@ -1,5 +1,6 @@
 #include "vector_store.hpp"
 #include "../distance/distance.hpp"
+#include "types.hpp"
 #include <algorithm>
 #include <stdexcept>
 
