@@ -3,6 +3,7 @@
 #include "../common/types.hpp"
 #include "../common/vector_store.hpp"
 #include <vector>
+#include <unordered_map>
 #include <random>
 #include <cmath>
 
@@ -69,12 +70,20 @@ private:
     std::mt19937 rng_;
     std::uniform_real_distribution<double> uniform_dist_;
     
-    // Graph state
     // TODO: Design the node structure
-    // Hint: You need to store:
-    //   - For each VectorId: what layers it exists in
-    //   - For each VectorId at each layer: list of neighbor VectorIds
+    struct HNSWNode{
+        int topLayer;
+
+        std::vector<std::vector<VectorId>> neighbors;
+
+        // Default constructor
+        HNSWNode() : topLayer(0), neighbors(1) {}
+        
+        // Constructor with layer
+        HNSWNode(int layer) : topLayer(layer), neighbors(layer + 1){}
+    };
     
+    std::unordered_map<VectorId, HNSWNode> nodes_;
     VectorId entryPoint_;   // Entry point for search (node with highest layer)
     int maxLevel_;          // Current maximum layer in the graph
     

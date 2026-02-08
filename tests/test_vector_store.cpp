@@ -1,5 +1,5 @@
-#include "common/vector_store.hpp"
-#include "distance/distance.hpp"
+#include "../src/common/vector_store.hpp"
+#include "../src/distance/distance.hpp"
 #include <cassert>
 #include <cmath>
 #include <iostream>
